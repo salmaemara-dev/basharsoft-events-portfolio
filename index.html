@@ -65,7 +65,7 @@ a{color:var(--blue)}
  radial-gradient(40% 50% at 20% 30%,rgba(11,118,187,.75),transparent 70%),
  radial-gradient(35% 45% at 80% 20%,rgba(143,191,58,.28),transparent 70%),
  radial-gradient(45% 55% at 70% 85%,rgba(214,36,110,.32),transparent 70%);
- filter:blur(20px);animation:drift 18s ease-in-out infinite alternate}
+ filter:blur(20px)}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
 @keyframes drift{to{transform:translate(4%,-3%) rotate(6deg) scale(1.08)}}
 @media (prefers-reduced-motion: reduce){.hero::before{animation:none}}
@@ -342,6 +342,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .tilt{transform-style:preserve-3d;transition:transform .2s ease-out}
 /* Case number watermark */
 .case{position:relative;overflow:hidden}
+.case,.prod,.web,.recaps,.network{content-visibility:auto;contain-intrinsic-size:auto 1200px}
 .case .wm{position:absolute;right:-1rem;top:1rem;font:800 clamp(8rem,20vw,16rem)/1 var(--f-display);color:color-mix(in srgb,var(--ev) 7%,transparent);pointer-events:none;z-index:0}
 .case .wrap{position:relative;z-index:1}
 
@@ -600,9 +601,9 @@ dialog.lb #lb-next{left:auto;right:calc(14px + env(safe-area-inset-right,0px))}
       </div>
       <div class="mosaic-wrap reveal">
         <div class="mosaic" aria-label="Event photography">
-          <figure data-rot><img class="on" src="img/wfc2-desks.jpg" alt="Job seekers at the application desks of FORASNA Workforce Connect"><img src="img/wfc3-queue.jpg" alt="Job seekers queuing at a FORASNA booth" loading="lazy"><img src="img/fem-session.jpg" alt="FEMpower career-finance session" loading="lazy"><figcaption>Live from our events</figcaption></figure>
-          <figure data-rot><img class="on" src="img/fem-welcome.jpg" alt="Opening welcome on the FEMpower Summit main stage"><img src="img/next-speaker3.jpg" alt="Career talk at NEXT Summit" loading="lazy"><img src="img/wfc2-stage.jpg" alt="FORASNA Retail Edition stage" loading="lazy"></figure>
-          <figure data-rot><img class="on" src="img/wfc3-crowd.jpg" alt="Crowds at FORASNA employer booths"><img src="img/cx-crowd.jpg" alt="Open-circle session at Customer Service Hiring Day" loading="lazy"><img src="img/next-taskus.jpg" alt="Candidates at the TaskUs booth at NEXT Summit" loading="lazy"></figure>
+          <figure data-rot><img class="on" src="t/img/wfc2-desks.jpg" alt="Job seekers at the application desks of FORASNA Workforce Connect"><img src="t/img/wfc3-queue.jpg" alt="Job seekers queuing at a FORASNA booth" loading="lazy"><img src="t/img/fem-session.jpg" alt="FEMpower career-finance session" loading="lazy"><figcaption>Live from our events</figcaption></figure>
+          <figure data-rot><img class="on" src="t/img/fem-welcome.jpg" alt="Opening welcome on the FEMpower Summit main stage"><img src="t/img/next-speaker3.jpg" alt="Career talk at NEXT Summit" loading="lazy"><img src="t/img/wfc2-stage.jpg" alt="FORASNA Retail Edition stage" loading="lazy"></figure>
+          <figure data-rot><img class="on" src="t/img/wfc3-crowd.jpg" alt="Crowds at FORASNA employer booths"><img src="t/img/cx-crowd.jpg" alt="Open-circle session at Customer Service Hiring Day" loading="lazy"><img src="t/img/next-taskus.jpg" alt="Candidates at the TaskUs booth at NEXT Summit" loading="lazy"></figure>
         </div>
         <div class="float-chip"><b class="cnt">500+</b>on-the-spot interviews in one day</div>
       </div>
@@ -708,14 +709,14 @@ dialog.lb #lb-next{left:auto;right:calc(14px + env(safe-area-inset-right,0px))}
       </div>
       <div class="sites">
         <article class="site" style="--ev:var(--c-next)">
-          <div class="browser"><div class="bbar"><i></i><i></i><i></i><span>nextsummit.io</span></div><div class="shots" data-shots><img src="web/next-d0.jpg" alt="NEXT Summit website home: Find what's next for you" loading="lazy"><img src="web/next-d1.jpg" alt="NEXT Summit website: Explore, Prepare, Connect, Get hired" loading="lazy"><img src="web/next-d2.jpg" alt="NEXT Summit website: the room you'll be walking into" loading="lazy"><img src="web/next-d3.jpg" alt="NEXT Summit website: your day at NEXT" loading="lazy"></div></div>
+          <div class="browser"><div class="bbar"><i></i><i></i><i></i><span>nextsummit.io</span></div><div class="shots" data-shots><img src="t/web/next-d0.jpg" alt="NEXT Summit website home: Find what's next for you" loading="lazy"><img src="t/web/next-d1.jpg" alt="NEXT Summit website: Explore, Prepare, Connect, Get hired" loading="lazy"><img src="t/web/next-d2.jpg" alt="NEXT Summit website: the room you'll be walking into" loading="lazy"><img src="t/web/next-d3.jpg" alt="NEXT Summit website: your day at NEXT" loading="lazy"></div></div>
           <img class="phone" src="web/next-m0.jpg" alt="NEXT Summit website on mobile" loading="lazy">
           <div class="site-meta"><span class="tag">NEXT Summit 2026</span><h3>nextsummit.io</h3><p>A bold, youth-first site: four paths (Explore, Prepare, Connect, Get hired), live ticket offers, the full day's programme, coaching circles and hiring zones.</p>
           <ul class="feat"><li>Ticketing with timed offers</li><li>Career tracks &amp; agenda</li><li>Coaching circles &amp; mentorship</li><li>Hiring companies &amp; partners</li><li>Mobile-first with sticky ticket CTA</li></ul>
           <a class="btn solid" href="https://nextsummit.io/" target="_blank" rel="noopener">Visit the live site <span class="arr">↗</span></a></div>
         </article>
         <article class="site" style="--ev:var(--c-fem)">
-          <div class="browser"><div class="bbar"><i></i><i></i><i></i><span>fempowersummit.com</span></div><div class="shots" data-shots><img src="web/fem-d0.jpg" alt="FEMpower Summit website home: More women in, more women up" loading="lazy"><img src="web/fem-d1.jpg" alt="FEMpower website search: what are you looking for" loading="lazy"><img src="web/fem-d3.jpg" alt="FEMpower website: one day, thousands of possibilities" loading="lazy"><img src="web/fem-d5.jpg" alt="FEMpower website: one day packed with possibility" loading="lazy"></div></div>
+          <div class="browser"><div class="bbar"><i></i><i></i><i></i><span>fempowersummit.com</span></div><div class="shots" data-shots><img src="t/web/fem-d0.jpg" alt="FEMpower Summit website home: More women in, more women up" loading="lazy"><img src="t/web/fem-d1.jpg" alt="FEMpower website search: what are you looking for" loading="lazy"><img src="t/web/fem-d3.jpg" alt="FEMpower website: one day, thousands of possibilities" loading="lazy"><img src="t/web/fem-d5.jpg" alt="FEMpower website: one day packed with possibility" loading="lazy"></div></div>
           <img class="phone" src="web/fem-m0.jpg" alt="FEMpower Summit website on mobile" loading="lazy">
           <div class="site-meta"><span class="tag">FEMpower Summit 2026</span><h3>fempowersummit.com</h3><p>"Rewrite the Ratio" online: a searchable summit with speakers, sessions and hiring companies, career matchmaking, and an AI assistant answering attendee questions live.</p>
           <ul class="feat"><li>AI assistant ("Need help?")</li><li>Search across speakers, sessions &amp; companies</li><li>WUZZUF career matchmaking</li><li>Track-based agenda</li><li>Live countdown &amp; ticketing</li></ul>
@@ -896,6 +897,7 @@ const FEM = {
 
 /* ---------- RENDER ---------- */
 const $ = (s,r=document)=>r.querySelector(s);
+const T = s=>/^(img|lib|vid|web)\/.*\.jpg$/.test(s)?'t/'+s:s;
 const esc = s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const KIND = {event:'Event result',hist:'Across editions',digital:'Digital reach',reg:'Registrations',tbc:''};
 
@@ -903,7 +905,7 @@ $('#rail').innerHTML = PROOFS.map(p=>`<div class="proof"><b>${p.v}</b><span>${es
 
 const COVERS={next:'next-taskus',fempower:'fem-welcome',cx:'cx-crowd',wfc0:'wfc1-shaheen',wfc1:'wfc2-exhib',wfc2:'wfc3-crowd',suhour:'suh-group3'};
 $('#badges').innerHTML = BADGE_LIST.map(b=>{const cv=COVERS[b.id+(b.tab??'')];return `<a class="badge glow reveal ${cv?'cover':''} ${b.k?'':'review-only'}" href="#${b.id}" data-tab="${b.tab??''}" style="--ev:${b.c}">
-  ${cv?`<div class="bg" style="background-image:url(img/${cv}.jpg)"></div>`:''}<span class="go" aria-hidden="true">→</span><div class="band"></div><div class="role">${esc(b.r)}</div><h3>${esc(b.t)}</h3><div class="meta">${esc(b.m)}</div>
+  ${cv?`<div class="bg" style="background-image:url(t/img/${cv}.jpg)"></div>`:''}<span class="go" aria-hidden="true">→</span><div class="band"></div><div class="role">${esc(b.r)}</div><h3>${esc(b.t)}</h3><div class="meta">${esc(b.m)}</div>
   <div class="key">${b.k?b.k:'<span style="font-size:1rem;color:var(--muted)">Numbers to confirm</span>'}<small>${esc(b.kl)}</small></div></a>`}).join('');
 
 function metricHTML(m){
@@ -926,10 +928,10 @@ function carouselHTML(e,name){
   if(!e.photos.length) return `<div class="placeholder"><div><div class="big">${esc(e.short)}</div><div class="small">${esc(e.date)} · ${esc(e.venue)}</div><div class="small review-only" style="margin-top:14px;font-weight:600">No event-night photos found yet</div></div></div>${galleryLinks(e)}`;
   const label=name||e.short;
   return `<div class="carousel" data-car data-name="${esc(label)}">
-    <div class="track" tabindex="0" aria-label="${esc(label)} photos, scrollable">${e.photos.map((p,i)=>`<button type="button" class="slide${p.portrait?' p':''}" data-i="${i}" aria-label="Open photo: ${esc(p.cap)}"><img src="${p.src}" alt="${esc(p.cap)}" loading="lazy"><figcaption>${esc(p.cap)}</figcaption></button>`).join('')}</div>
+    <div class="track" tabindex="0" aria-label="${esc(label)} photos, scrollable">${e.photos.map((p,i)=>`<button type="button" class="slide${p.portrait?' p':''}" data-i="${i}" aria-label="Open photo: ${esc(p.cap)}"><img src="${T(p.src)}" data-full="${p.src}" alt="${esc(p.cap)}" loading="lazy" decoding="async"><figcaption>${esc(p.cap)}</figcaption></button>`).join('')}</div>
     <div class="car-ctl"><div class="dots">${e.photos.map((p,i)=>`<button type="button" aria-label="Photo ${i+1}" ${i?'':'aria-current="true"'}></button>`).join('')}</div>
     <div style="display:flex;gap:8px;align-items:center"><span class="count num"><b>1</b> / ${e.photos.length}</span><button type="button" data-step="-1" aria-label="Previous photo">‹</button><button type="button" data-step="1" aria-label="Next photo">›</button></div></div>
-    ${e.photos.length>2?`<div class="thumbs">${e.photos.map((p,i)=>`<button type="button" aria-label="Show photo ${i+1}" ${i?'':'aria-current="true"'}><img src="${p.src}" alt="" loading="lazy"></button>`).join('')}</div>`:''}
+    ${e.photos.length>2?`<div class="thumbs">${e.photos.map((p,i)=>`<button type="button" aria-label="Show photo ${i+1}" ${i?'':'aria-current="true"'}><img src="${T(p.src)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>`:''}
   </div>${galleryLinks(e)}`;
 }
 function partnersHTML(e){
@@ -1032,7 +1034,7 @@ $('#cases').innerHTML = EVENTS.map(e=>{
 /* Carousels: swipe, arrows, dots, thumbs, gentle autoplay while visible */
 const lb=$('#lb'); const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let lbSet=[], lbI=0;
-function lbShow(i){lbI=(i+lbSet.length)%lbSet.length;const im=lbSet[lbI];$('#lb-img').src=im.src;$('#lb-img').alt=im.alt;$('#lb-cap').textContent=`${im.alt}  ·  ${lbI+1} / ${lbSet.length}`}
+function lbShow(i){lbI=(i+lbSet.length)%lbSet.length;const im=lbSet[lbI];$('#lb-img').src=im.dataset.full||im.src;$('#lb-img').alt=im.alt;$('#lb-cap').textContent=`${im.alt}  ·  ${lbI+1} / ${lbSet.length}`}
 document.querySelectorAll('[data-car]').forEach(car=>{
   const track=$('.track',car), slides=[...track.children], dots=[...car.querySelectorAll('.dots button')], thumbs=[...car.querySelectorAll('.thumbs button')], count=$('.count b',car);
   let idx=0, timer=null, hover=false, seen=false;
@@ -1096,8 +1098,8 @@ if('IntersectionObserver' in window){const links=[...document.querySelectorAll('
 
 /* Photo ribbon from every gallery */
 (()=>{const all=EVENTS.flatMap(e=>[...(e.photos||[]),...((e.editions||[]).flatMap(d=>d.photos))]);
- const half=Math.ceil(all.length/2),rows=document.querySelectorAll('#ribbon .row');
- [all.slice(0,half),all.slice(half)].forEach((set,i)=>{const h=set.map(p=>`<img src="${p.src}" alt="${esc(p.cap)}" loading="lazy">`).join('');rows[i].innerHTML=h+h.replace(/<img /g,'<img aria-hidden="true" ')});
+ all.splice(28);const half=Math.ceil(all.length/2),rows=document.querySelectorAll('#ribbon .row');
+ [all.slice(0,half),all.slice(half)].forEach((set,i)=>{const h=set.map(p=>`<img src="${T(p.src)}" data-full="${p.src}" alt="${esc(p.cap)}" loading="lazy" decoding="async">`).join('');rows[i].innerHTML=h+h.replace(/<img /g,'<img aria-hidden="true" ')});
  document.querySelectorAll('#ribbon img').forEach(im=>im.addEventListener('click',()=>{lbSet=[...document.querySelectorAll('#ribbon .row:first-child img')].slice(0,half);const i=lbSet.findIndex(x=>x.src===im.src);if(i<0)lbSet=[im];lbShow(Math.max(0,i));try{lb.showModal()}catch(_){}}));})();
 /* Kinetic words */
 (()=>{const w=['Real jobs','Ready talent','5 formats','76 partners','3,500+ in one day','Women in work','Hiring on the spot'];const h=w.map((t,i)=>`<span class="${i%2?'':'fill'}">${t}</span><span>✦</span>`).join('');$('.kinetic .run2').innerHTML=h+h})();
@@ -1116,19 +1118,19 @@ if(!RM&&matchMedia('(hover:hover)').matches){document.querySelectorAll('.badge.c
  // interleave so the opening view mixes categories
  const by={};all.forEach(x=>(by[x.k]=by[x.k]||[]).push(x));const order=[];let more=true;for(let r=0;more;r++){more=false;Object.values(by).forEach(a=>{if(a[r]){order.push(a[r]);more=true}})}
  const grid=$('#lib'),K=['All',...Object.values(KMAP),'Digital Experiences'],E=['All events','NEXT','FEMpower','CS Hiring Day','FORASNA','Employers Meetup'];
- let fk='All',fe='All events',limit=36;
+ let fk='All',fe='All events',limit=24;
  const cnt=k=>k==='All'?order.length:k==='Digital Experiences'?2:order.filter(x=>x.k===k).length;
  $('#pf-k').innerHTML=K.map(k=>`<button type="button" aria-pressed="${k==='All'}" data-k="${esc(k)}">${esc(k)} <small>${cnt(k)}</small></button>`).join('');
  const n=$('#lib-n');if(n)n.textContent=Math.floor(order.length/10)*10+'+';
  function render(){
   const list=order.filter(x=>(fk==='All'||x.k===fk)&&(fe==='All events'||x.e===fe));
-  grid.innerHTML=list.slice(0,limit).map((x,i)=>`<button type="button" class="lt" data-i="${i}"><img src="${x.s}" alt="${esc(x.c)}" loading="lazy"><span class="k">${esc(x.k)}</span><span class="cap">${esc(x.c)}<small>${esc(x.e)}</small></span></button>`).join('')||'<p style="color:var(--muted)">No photos for this combination yet.</p>';
+  grid.innerHTML=list.slice(0,limit).map((x,i)=>`<button type="button" class="lt" data-i="${i}"><img src="${T(x.s)}" data-full="${x.s}" alt="${esc(x.c)}" loading="lazy" decoding="async"><span class="k">${esc(x.k)}</span><span class="cap">${esc(x.c)}<small>${esc(x.e)}</small></span></button>`).join('')||'<p style="color:var(--muted)">No photos for this combination yet.</p>';
   $('#lib-more').parentElement.hidden=list.length<=limit;
   grid.querySelectorAll('.lt').forEach(t=>t.addEventListener('click',()=>{lbSet=[...grid.querySelectorAll('img')];lbShow(+t.dataset.i);try{lb.showModal()}catch(_){}}));
  }
  $('#pf-k').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.k==='Digital Experiences'){document.getElementById('websites').scrollIntoView({behavior:RM?'auto':'smooth'});return}
-  fk=b.dataset.k;limit=36;$('#pf-k').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));render()});
- $('#lib-more').addEventListener('click',()=>{limit+=36;render()});
+  fk=b.dataset.k;limit=24;$('#pf-k').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));render()});
+ $('#lib-more').addEventListener('click',()=>{limit+=24;render()});
  render();
 })();
 /* Website screenshot rotation */
@@ -1138,13 +1140,13 @@ document.querySelectorAll('[data-shots]').forEach(w=>{const im=[...w.children];l
  const V=window.VIDS||[],EV={fem:['FEMpower','var(--c-fem)'],wfc:['FORASNA','var(--c-wfc)'],next:['NEXT Summit','var(--c-next)']};
  const play='<span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></span>';
  const feat=V.filter(v=>v.feat);
- $('#vfeat').innerHTML=feat.map((v,i)=>`<a class="vcard ${i===0?'big':''}" style="--ev:${EV[v.e][1]}" data-m="${v.m||''}" data-t="${esc(v.h)}" href="${v.u}" target="_blank" rel="noopener" aria-label="Play ${esc(v.h)}"><img src="${v.i}" alt="" loading="lazy">${play}<div class="meta"><span class="tag">${esc(v.t)}</span><h3>${esc(v.h)}</h3>${v.p?`<p>${esc(v.p)}</p>`:''}</div></a>`).join('');
+ $('#vfeat').innerHTML=feat.map((v,i)=>`<a class="vcard ${i===0?'big':''}" style="--ev:${EV[v.e][1]}" data-m="${v.m||''}" data-t="${esc(v.h)}" href="${v.u}" target="_blank" rel="noopener" aria-label="Play ${esc(v.h)}"><img src="${T(v.i)}" alt="" loading="lazy" decoding="async">${play}<div class="meta"><span class="tag">${esc(v.t)}</span><h3>${esc(v.h)}</h3>${v.p?`<p>${esc(v.p)}</p>`:''}</div></a>`).join('');
  const ORD={wfc:0,next:1,fem:2};const rest=V.filter(v=>!v.feat&&v.c!=='stage'&&v.c!=='room').sort((x,y)=>ORD[x.e]-ORD[y.e]);let f='all';
  const F=[['all','All videos'],['wfc','FORASNA'],['next','NEXT Summit'],['fem','FEMpower']];
  $('#vf').innerHTML=F.map(([k,l])=>`<button type="button" aria-pressed="${k==='all'}" data-v="${k}">${l} <small>${k==='all'?rest.length:rest.filter(v=>v.e===k).length}</small></button>`).join('');
  function r(){const l=rest.filter(v=>f==='all'||v.e===f);
   const CL=[['films','Films & employer voices','The full story, told by the people who were there'],['arrive','Arrival & first impressions','Arches, gates and the first steps inside'],['brand','Brand & build','Walls, flags and the details that set the scene'],['floor','On the hiring floor','Queues, booths and interviews in action']];
-  const card=v=>`<a class="reel ${v.f==='land'?'land':''}" style="--ev:${EV[v.e][1]}" data-m="${v.m||''}" data-t="${esc(v.h)}" href="${v.u}" target="_blank" rel="noopener" aria-label="Play ${esc(v.h)}"><img src="${v.i}" alt="" loading="lazy">${play}<span class="tag">${esc(EV[v.e][0])}</span><span class="rt">${esc(v.h)}<small>${esc(v.t)}</small></span></a>`;
+  const card=v=>`<a class="reel ${v.f==='land'?'land':''}" style="--ev:${EV[v.e][1]}" data-m="${v.m||''}" data-t="${esc(v.h)}" href="${v.u}" target="_blank" rel="noopener" aria-label="Play ${esc(v.h)}"><img src="${T(v.i)}" alt="" loading="lazy" decoding="async">${play}<span class="tag">${esc(EV[v.e][0])}</span><span class="rt">${esc(v.h)}<small>${esc(v.t)}</small></span></a>`;
   $('#reels').innerHTML=CL.map(([k,t,d])=>{const g=l.filter(v=>v.c===k);return g.length?`<div class="vclu"><div class="vclu-h"><h3>${esc(t)}</h3><span>${esc(d)} · ${g.length}</span></div><div class="reel-grid">${g.map(card).join('')}</div></div>`:''}).join('');
   const fo=$('#vfold');if(f==='all'){fo.hidden=true}else{fo.hidden=false;fo.href=(window.VFOLD||{})[f]||'#'}}
  const vp=$('#vp'),vv=$('#vp-v');
