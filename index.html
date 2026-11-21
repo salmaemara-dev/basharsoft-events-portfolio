@@ -499,7 +499,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .vclu-h span{font-size:.82rem;color:rgba(255,255,255,.62)}
 .reel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .reel{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;display:block;color:#fff;text-decoration:none;background:#0b2135;isolation:isolate}
-.reel.land{grid-column:span 2;aspect-ratio:auto}
+.reel.land{grid-column:span 2;aspect-ratio:auto;min-height:280px}
 .reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
 .reel::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(4,12,22,.1) 40%,rgba(4,12,22,.88))}
 .reel:hover img{transform:scale(1.07)}
@@ -1143,8 +1143,8 @@ document.querySelectorAll('[data-shots]').forEach(w=>{const im=[...w.children];l
  $('#vfeat').innerHTML=feat.map((v,i)=>`<a class="vcard ${i===0?'big':''}" style="--ev:${EV[v.e][1]}" data-m="${v.m||''}" data-t="${esc(v.h)}" href="${v.u}" target="_blank" rel="noopener" aria-label="Play ${esc(v.h)}"><img src="${T(v.i)}" alt="" loading="lazy" decoding="async">${play}<div class="meta"><span class="tag">${esc(v.t)}</span><h3>${esc(v.h)}</h3>${v.p?`<p>${esc(v.p)}</p>`:''}</div></a>`).join('');
  const ORD={wfc:0,next:1,fem:2};const rest=V.filter(v=>!v.feat&&v.c!=='stage'&&v.c!=='room').sort((x,y)=>ORD[x.e]-ORD[y.e]);let f='all';
  const F=[['all','All videos'],['wfc','FORASNA'],['next','NEXT Summit'],['fem','FEMpower']];
- $('#vf').innerHTML=F.map(([k,l])=>`<button type="button" aria-pressed="${k==='all'}" data-v="${k}">${l} <small>${k==='all'?rest.length:rest.filter(v=>v.e===k).length}</small></button>`).join('');
- function r(){const l=rest.filter(v=>f==='all'||v.e===f);
+ $('#vf').innerHTML=F.map(([k,l])=>`<button type="button" aria-pressed="${k==='all'}" data-v="${k}">${l} <small>${k==='all'?rest.length:V.filter(v=>v.e===k&&(v.feat||rest.includes(v))).length}</small></button>`).join('');
+ function r(){const l=f==='all'?rest:V.filter(v=>v.e===f&&(v.feat||rest.includes(v))).map(v=>v.feat?{...v,c:'films'}:v);
   const CL=[['films','Films & employer voices','The full story, told by the people who were there'],['arrive','Arrival & first impressions','Arches, gates and the first steps inside'],['brand','Brand & build','Walls, flags and the details that set the scene'],['floor','On the hiring floor','Queues, booths and interviews in action']];
   const card=v=>`<a class="reel ${v.f==='land'?'land':''}" style="--ev:${EV[v.e][1]}" data-m="${v.m||''}" data-t="${esc(v.h)}" href="${v.u}" target="_blank" rel="noopener" aria-label="Play ${esc(v.h)}"><img src="${T(v.i)}" alt="" loading="lazy" decoding="async">${play}<span class="tag">${esc(EV[v.e][0])}</span><span class="rt">${esc(v.h)}<small>${esc(v.t)}</small></span></a>`;
   $('#reels').innerHTML=CL.map(([k,t,d])=>{const g=l.filter(v=>v.c===k);return g.length?`<div class="vclu"><div class="vclu-h"><h3>${esc(t)}</h3><span>${esc(d)} · ${g.length}</span></div><div class="reel-grid">${g.map(card).join('')}</div></div>`:''}).join('');
